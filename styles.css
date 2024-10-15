@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#pause-btn, #resume-btn {
+    background-color: #ffc107;
+    color: white;
+}
+
+#stop-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#download-btn {
+    background-color: #007bff;
+    color: white;
+    margin-top: 20px;
+}
+
+progress {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#status {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+#transcription {
+    min-height: 50px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    overflow-y: auto;
+}
+
+#history {
+    text-align: left;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#history li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.recording-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    animation: blink 1s infinite;
+    visibility: hidden;
+    margin: 10px auto;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.transcription-highlight {
+    background-color: yellow;
+    transition: background-color 2s ease;
+}
+
+.history-item {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.history-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

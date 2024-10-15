@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictáfono Interactivo</title>
+    <link rel="stylesheet" href="css/styles.css">  <!-- Enlace a los estilos CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Dictáfono Interactivo</h1>
+
+        <div class="controls">
+            <label for="language-select">Seleccionar idioma: </label>
+            <select id="language-select">
+                <option value="es-ES">Español (España)</option>
+                <option value="en-US">Inglés (EE.UU.)</option>
+                <option value="fr-FR">Francés (Francia)</option>
+                <option value="de-DE">Alemán</option>
+                <option value="it-IT">Italiano</option>
+            </select>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn">Comenzar Grabación</button>
+            <button id="pause-btn" disabled>Pausar</button>
+            <button id="resume-btn" disabled>Reanudar</button>
+            <button id="stop-btn" disabled>Detener</button>
+        </div>
+
+        <div id="status">Estado: Inactivo</div>
+        <div id="notification" class="notification"></div>
+        <div class="recording-indicator" id="recording-indicator"></div>
+
+        <div class="progress-container">
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+
+        <h2>Transcripción Actual</h2>
+        <p id="transcription">La transcripción aparecerá aquí...</p>
+
+        <h2>Historial de Transcripciones</h2>
+        <ul id="history"></ul>
+
+        <button id="download-btn" disabled>Descargar Transcripción</button>
+    </div>
+
+    <script src="js/script.js"></script>  <!-- Enlace al archivo JS -->
+</body>
+</html>
